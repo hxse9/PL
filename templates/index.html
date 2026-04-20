@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPL Stats - Premium Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>Premier<span>Stats</span></h1>
+            </div>
+            <nav class="country-nav">
+                <ul id="country-list">
+                    <li class="active" data-id="all">All Countries</li>
+                    <!-- Dynamic Countries via JS -->
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-header">
+                <h2 id="current-view-title">All Players</h2>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search player..." id="search-input">
+                </div>
+            </header>
+            
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <h3>Total Players</h3>
+                    <p id="total-players">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Goals</h3>
+                    <p id="total-goals">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Assists</h3>
+                    <p id="total-assists">0</p>
+                </div>
+            </div>
+
+            <section class="players-grid" id="players-grid">
+                <!-- Player Cards will be dynamically inserted here -->
+            </section>
+        </main>
+    </div>
+
+    <!-- Player Detail Modal -->
+    <div id="player-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="modal-close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-left">
+                    <img id="modal-player-img" src="" alt="Player Image">
+                </div>
+                <div class="modal-right">
+                    <p id="modal-country" class="modal-subtitle">COUNTRY</p>
+                    <h2 id="modal-name">Player Name</h2>
+                    
+                    <div class="modal-specs">
+                        <div class="spec">
+                            <span class="spec-label">Height</span>
+                            <span class="spec-value" id="modal-height">--</span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-label">Weight</span>
+                            <span class="spec-value" id="modal-weight">--</span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-label">Position</span>
+                            <span class="spec-value" id="modal-position">--</span>
+                        </div>
+                    </div>
+
+                    <div class="modal-stats">
+                        <div class="stat-pill">Apps: <span id="modal-apps">0</span></div>
+                        <div class="stat-pill">Goals: <span id="modal-goals">0</span></div>
+                        <div class="stat-pill">Assists: <span id="modal-assists">0</span></div>
+                    </div>
+
+                    <div class="modal-bio">
+                        <h3>Biography</h3>
+                        <p id="modal-desc">Loading player history and biography...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
